@@ -1,6 +1,6 @@
-# moph-mqtt-service
+# mqtt-service
 
-MQTT broker service สำหรับ MOPH — รองรับ subscribe แบบมีสิทธิ์ (JWT + access code) และ log ทุก
+MQTT broker service — รองรับ subscribe แบบมีสิทธิ์ (JWT + access code) และ log ทุก
 MQTT event ลงฐานข้อมูล โดย **ไม่ต้องติดตั้ง broker แยกต่างหาก** (ใช้ [aedes](https://github.com/moscajs/aedes)
 ซึ่งเป็น MQTT broker แบบ pure-JS ที่ embed เข้ากับ process ของ service นี้เอง)
 
@@ -233,7 +233,7 @@ client.on('message', (receivedTopic, payload) => {
 ตอน dev ที่ Angular รันด้วย `ng serve` (ปกติ `http://localhost:4200`) จะเป็นคนละ origin กับ API นี้
 (`http://localhost:3001`) service นี้เปิด CORS ให้แล้วผ่านตัวแปร `CORS_ORIGIN` ใน `.env`
 (ค่าเริ่มต้น `*` ใช้ได้เลยตอน dev โดยไม่ต้องตั้งค่า Angular proxy เพิ่ม) สำหรับ production ควรระบุ
-origin จริงของเว็บแทน เช่น `CORS_ORIGIN=https://myapp.moph.go.th`
+origin จริงของเว็บแทน เช่น `CORS_ORIGIN=https://myapp.co.th`
 
 ### 2. ติดตั้งไลบรารี `mqtt` ในโปรเจกต์ Angular
 
