@@ -346,9 +346,3 @@ sendChat(text: string) {
 - Topic ถูกจำกัดขอบเขตตาม `hospcode`/`uid` ทั้งฝั่ง subscribe และ publish
 - Rate limit บน `POST /subscribe-requests` ต่อ IP
 - `admin.mqtt_subscribe` มี `is_active`/`expire_at` ให้ revoke สิทธิ์ได้ทันทีโดยไม่ต้อง restart broker
-
-## หมายเหตุด้านข้อมูล/scale
-
-`admin.mqtt_event` log ทุก publish message แบบเต็มรูปแบบ ออกแบบรองรับ volume สูง (partition รายวัน,
-batch write buffer) ดูรายละเอียดเต็มที่ [design/mqtt-broker-design.md](./design/mqtt-broker-design.md)
-ข้อ 4.3-4.4 รวมถึงตัวเลข storage sizing ที่ควรยืนยันกับทีม infra ก่อนขึ้น production
